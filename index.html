@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Alex Vanderzon - Research & User Experience Designer</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Research & User Experience Designer from Adelaide, Australia"/>
+  	<meta name="keywords" content="Design,Research, UI, UX, iOS, App, Mac"/>
+  	<meta name="viewport" content="initial-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.png" />
+
+    <!-- JS -->
+
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+  </head>
+
+  <body class="animated fadeIn">
+      <main>
+        <header>
+          <h2>Alex Vanderzon</h2>
+          <p>Research &amp; User Experience Designer</p>
+        </header>
+
+
+        <ul class="social-links">
+          <li><a href="http://www.dribbble.com/vanderzon" target="_blank">Dribbble</a></li>
+          <li><a href="http://www.twitter.com/alexvanderzon" target="_blank">Twitter</a></li>
+          <li><a href="mailto:alex@alexvanderzon.com" target="_blank">Email</a></li>
+        </ul>
+      </main>
+
+      <section class="animated fadeInUp">
+        <ul class="shots">
+          <li class="shots--shot"></li>
+        </ul>
+      </section>
+  </body>
+
+  <script type='text/javascript'>
+    $(function() {
+      $.ajax('https://api.dribbble.com/v1/users/vanderzon/shots?per_page=100&access_token=ce9a3ea8aca757a27a5e20f2e1439e945e917ff34072ebad47ddc97ae7c88466').done(function( data, textStatus, jqXHR ) {
+                var image;
+                if (data.length > 0) {
+                  $.each(data.reverse(), function(i, val) {
+                    if(val.tags.indexOf('lowprofile') > -1) { return; }
+                    image = val.images.hidpi !== null && val.images.hidpi !== undefined ? val.images.hidpi : val.images.normal;
+                    $('.shots').prepend(
+                      '<li class="box"><a href="'+val.html_url+'"><img src="'+image+'"/></a></li>'
+                    );
+                  });
+                }
+          else {
+            $('.shots').append('<li>No shots.</li>');
+          }
+      });
+    });
+    </script>
+
+<!-- Google analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50386592-1', 'alexvanderzon.com');
+  ga('send', 'pageview');
+</script>
+
+</html>

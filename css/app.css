@@ -1,0 +1,112 @@
+* {
+  transition: 0.150s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+body, html {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 18px;
+  color: #000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+body {
+  width: auto;
+  height: auto; }
+
+a {
+  text-decoration: none; }
+
+h2 {
+  font-size: 26px;
+  line-height: 28px;
+  font-weight: 500;
+  margin-bottom: 12px; }
+
+p {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 500;
+  color: #7A7D7D;
+  margin: 0px; }
+
+body {
+  top: 0px;
+  left: 0px;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 1fr 1fr minmax(324px, 324px);
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; }
+
+main {
+  grid-column: 2 / 2;
+  grid-row: 2 / 2; }
+
+.social-links {
+  margin-top: 12px;
+  margin-bottom: 12px; }
+
+section {
+  grid-column: 1 / 4;
+  grid-row: 3 / 3;
+  padding: 0px;
+  margin-left: 0px;
+  background-color: #F9FAFA;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap; }
+
+header {
+  width: auto;
+  height: auto;
+  margin: 0px;
+  padding: 0px; }
+
+ul.social-links {
+  width: auto;
+  height: auto;
+  list-style: none;
+  padding: 0px;
+  margin: 0px 0px 0px 0px; }
+  ul.social-links li {
+    display: inline-block;
+    padding: 0px;
+    margin: 24px 12px 12px 0px;
+    border-radius: 3px;
+    opacity: 0.4; }
+    ul.social-links li a {
+      font-size: 16px;
+      color: #000;
+      font-weight: 500;
+      line-height: 24px; }
+    ul.social-links li:hover {
+      opacity: 1.0; }
+      ul.social-links li:hover a {
+        font-size: 16px;
+        color: #000;
+        font-weight: 500;
+        line-height: 24px; }
+
+section ul {
+  list-style: none;
+  padding: 0px;
+  margin: 6px; }
+  section ul li {
+    display: inline-block;
+    max-height: 300px;
+    max-width: 400px;
+    padding: 6px;
+    margin: 0px; }
+    section ul li img {
+      border-radius: 3px;
+      max-height: 300px;
+      max-width: 400px; }
+      section ul li img:hover {
+        box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.07); }
