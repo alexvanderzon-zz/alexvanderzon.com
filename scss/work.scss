@@ -1,0 +1,51 @@
+nav {
+
+  a {
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+    height: 44px;
+    line-height: 54px;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+ul {
+  &.work {
+    li {
+      opacity: 1;
+      display: inline-block;
+      margin:12px 12px 12px 0px;
+
+      &.coming-soon {
+        opacity: 0.5;
+        cursor: default;
+      }
+
+      a {
+        img {
+          vertical-align: middle;
+          width: 104px;
+        }
+      }
+    }
+  }
+  
+  &.clients {
+    li {
+      margin: 0px 12px 16px 0px;
+    }
+  }
+}
+
+span {
+  p {
+    color: #000;
+    font-size: 15px;
+    text-align: center;
+  }
+}

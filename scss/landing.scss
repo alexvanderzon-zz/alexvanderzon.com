@@ -3,11 +3,18 @@ header {
   height: auto;
   margin: 0px;
   padding: 0px;
+
+  svg {
+    margin: 0px;
+    vertical-align: middle;
+  }
 }
 
-  ul.social-links {
-    width: auto;
-    height: auto;
+div {
+  width: auto;
+  height: auto;
+
+  ul {
     list-style: none;
     padding: 0px;
     margin: 0px 0px 0px 0px;
@@ -38,6 +45,7 @@ header {
       }
     }
   }
+}
 
 section {
   ul {
@@ -59,6 +67,66 @@ section {
 
         &:hover {
           box-shadow: 0 0 12px 0 rgba(0,0,0,0.07);
+        }
+      }
+    }
+  }
+}
+
+// Scroll Label
+aside {
+  bottom: 0; // margin + height
+  right: 0;
+  text-align: right;
+
+  div.scroll-label {
+    display: inline-block;
+    color: $lightfont;
+    margin-right: 24px;
+
+    p {
+      font-size: 15px;
+      font-weight: 500;
+      text-align: right;
+      display: inline-block;
+    }
+
+    svg {
+      vertical-align: middle;
+      -webkit-animation: fadeTo 1.4s ease-out infinite;
+      animation: fadeTo 1.4s ease-out infinite;
+
+      @-webkit-keyframes fadeTo {
+        0% {
+          transform: translateX(0px);
+          opacity: 1;
+        }
+
+        50% {
+          transform: translateX(8px);
+          opacity: 1;
+        }
+
+        100% {
+          transform: translateX(0px);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeTo {
+        0% {
+          transform: translateX(0px);
+          opacity: 1;
+        }
+
+        50% {
+          transform: translateX(8px);
+          opacity: 1;
+        }
+
+        100% {
+          transform: translateX(0px);
+          opacity: 1;
         }
       }
     }

@@ -25,47 +25,78 @@
 
   </head>
 
-  <body class="animated fadeIn">
+  <body>
       <main>
         <header>
-          <h2>Alex Vanderzon</h2>
-          <p>Research &amp; User Experience Designer</p>
+          <svg height="66px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+            <path id="path">
+		          <animate attributeName="d" from="m0,26 h0" to="m0,26 h1100" dur="8s" begin="0.25s" fill="freeze" repeatCount="no-repeat"/>
+	          </path>
+
+            <path id="path-role">
+		          <animate attributeName="d" from="m0,60 h0" to="m0,60 h1100" dur="8s" begin="1.9s" fill="freeze" repeatCount="no-repeat"/>
+	          </path>
+
+	          <text font-size="26px" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' font-weight="500" fill='#000'>
+		          <textPath xlink:href="#path">Alex Vanderzon</textPath>
+	          </text>
+
+  	         <text font-size="18px" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'  font-weight="500" fill='#7d7d7d'>
+		             <textPath xlink:href="#path-role">User Experience Designer</textPath>
+	           </text>
+          </svg>
         </header>
 
-
-        <ul class="social-links">
-          <li><a href="http://www.dribbble.com/vanderzon" target="_blank">Dribbble</a></li>
-          <li><a href="http://www.twitter.com/alexvanderzon" target="_blank">Twitter</a></li>
-          <li><a href="mailto:alex@alexvanderzon.com" target="_blank">Email</a></li>
-        </ul>
+        <div class="animated fadeIn">
+          <ul>
+            <!--<li><a href="http://www.alexvanderzon.com/work.html" target="_blank">Work</a></li>-->
+            <li><a href="http://www.dribbble.com/vanderzon" target="_blank">Dribbble</a></li>
+            <li><a href="http://www.twitter.com/alexvanderzon" target="_blank">Twitter</a></li>
+            <li><a href="mailto:alex@alexvanderzon.com" target="_blank">Email</a></li>
+          </ul>
+        </div>
       </main>
+
+      <aside class="animated fadeIn">
+        <div class="scroll-label">
+          <p>Scroll to see more</p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" style= "color:#7A7D7D;" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-right"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
+        </div>
+      </aside>
 
       <section class="animated fadeInUp">
         <ul class="shots">
           <li class="shots--shot"></li>
         </ul>
       </section>
+
   </body>
 
   <script type='text/javascript'>
-    $(function() {
-      $.ajax('https://api.dribbble.com/v1/users/vanderzon/shots?per_page=100&access_token=ce9a3ea8aca757a27a5e20f2e1439e945e917ff34072ebad47ddc97ae7c88466').done(function( data, textStatus, jqXHR ) {
-                var image;
-                if (data.length > 0) {
-                  $.each(data.reverse(), function(i, val) {
-                    if(val.tags.indexOf('lowprofile') > -1) { return; }
-                    image = val.images.hidpi !== null && val.images.hidpi !== undefined ? val.images.hidpi : val.images.normal;
-                    $('.shots').prepend(
-                      '<li class="box"><a href="'+val.html_url+'"><img src="'+image+'"/></a></li>'
-                    );
-                  });
-                }
+    // Set the Access Token
+    var accessToken = '68b4c0f8e2fd7d2d1b1316d0483a55372cfabdd4e06aa81902e6425d29acb5ac';
+
+    // Call Dribble v2 API
+    $.ajax({
+        url: 'https://api.dribbble.com/v2/user/shots?access_token='+accessToken,
+        dataType: 'json',
+        type: 'GET',
+        success: function(data) {
+          if (data.length > 0) {
+            $.each(data.reverse(), function(i, val) {
+              if(val.tags.indexOf('lowprofile') > -1) { return; }
+              image = val.images.hidpi !== null && val.images.hidpi !== undefined ? val.images.hidpi : val.images.normal;
+              $('.shots').prepend(
+                '<li class="box"><a href="'+val.html_url+'"><img src="'+image+'"/></a></li>'
+                )
+            })
+          }
           else {
             $('.shots').append('<li>No shots.</li>');
           }
-      });
+        }
     });
-    </script>
+  </script>
 
 <!-- Google analytics -->
 <script>

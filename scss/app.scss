@@ -22,11 +22,18 @@ body {
   height: auto;
 }
 
+// Colour Variables //
+
+$lightfont: #7D7D7D;
+$section-background: #F9FAFA;;
+
+
 // Links //
 
 a {
   text-decoration: none;
 }
+
 
 // Typography //
 
@@ -37,18 +44,16 @@ h2 {
   margin-bottom: 12px;
 }
 
-
 p {
   font-size: 18px;
   line-height: 28px;
   font-weight: 500;
-  color: #7A7D7D;
+  color: $lightfont;
   margin: 0px;
 }
-
-
 
 // Components //
 
 @import "layout.scss";
 @import "landing.scss";
+@import "work.scss";
