@@ -9,6 +9,13 @@
 	],
 "creatorBuild": "28905",
 "files": {
+	"/.gitattributes": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "/build/.gitattributes",
+		"oF": 0
+		},
 	"/_downloads.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -269,13 +276,6 @@
 		"oF": 1,
 		"oS": 0,
 		"uL": 1
-		},
-	"/work.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "/build/work.html",
-		"oF": 0
 		}
 	},
 "hooks": [
@@ -284,7 +284,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 524536411,
-	"displayValue": "May 2018 website",
+	"displayValue": "alexvanderzon.com",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "meme-wonka",
 	"iconImageWasSetByUser": 0,
