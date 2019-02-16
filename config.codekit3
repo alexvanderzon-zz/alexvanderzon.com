@@ -16,6 +16,13 @@
 		"oAP": "/build/.gitattributes",
 		"oF": 0
 		},
+	"/.gitignore": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "/build/.gitignore",
+		"oF": 0
+		},
 	"/_downloads.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -285,10 +292,10 @@
 "projectAttributes": {
 	"creationDate": 524536411,
 	"displayValue": "alexvanderzon.com",
-	"displayValueWasSetByUser": 0,
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-wonka",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 555914594
+	"lastBuiltDate": 570853191.70508099
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
